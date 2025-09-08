@@ -100,6 +100,11 @@
             justify-content: center;
             border-bottom: 1px solid #333;
             align-items: center;
+            min-height: 61px; /* To prevent layout shift when links are absent */
+        }
+
+        .social-links:empty {
+            display: none; /* Hide the bar completely if no links are present */
         }
 
         .social-links a {
@@ -189,7 +194,7 @@
     <script>
         const students = [
             { sl: 1, id: "2410876101", name: "KAZI YEASIN ARAFAT", blood: "B+", whatsapp: "8801727774382", email: "kaziyeasinarafat221@gmail.com", facebook: "https://www.facebook.com/KaziYeasinArafat35" },
-            { sl: 2, id: "2410276102", name: "SHAHRIAR ALAM SHIHAB", blood: "", whatsapp: "", email: "", facebook: "https://www.facebook.com/shahriaralam.shihab0" },
+            { sl: 2, id: "2410276102", name: "SHAHRIAR ALAM SHIHAB", blood: "B+", whatsapp: "8801518410107", email: "shihab107@outlook.com", facebook: "https://www.facebook.com/shahriaralam.shihab0" },
             { sl: 3, id: "2410976103", name: "MD. RIFAT JAHAN JOY", blood: "B+", whatsapp: "8801639310978", email: "rifatjahanjoy@gmail.com", facebook: "#" },
             { sl: 4, id: "2410976104", name: "ANTAR KARATI", blood: "", whatsapp: "", email: "", facebook: "https://www.facebook.com/antar.karati.2024" },
             { sl: 5, id: "2410576105", name: "TANZIM AL ISLAM", blood: "O+", whatsapp: "8801757985820", email: "tanzimislam1212@gmail.com", facebook: "https://www.facebook.com/all.islam.336" },
@@ -199,14 +204,14 @@
             { sl: 9, id: "2411176109", name: "MD MAZHARUL HAQUE SIFAT", blood: "", whatsapp: "", email: "", facebook: "https://www.facebook.com/mazharul.haque.763170" },
             { sl: 10, id: "2410476110", name: "NAFIUL HASAN NILOY", blood: "", whatsapp: "", email: "", facebook: "https://www.facebook.com/nafiul.niloy.2024" },
             { sl: 11, id: "2410676111", name: "FARHAN SHARIAR ARNOB", blood: "O+", whatsapp: "8801771210808", email: "f.s.arnob09@gmail.com", facebook: "https://www.facebook.com/farhan.s.a.07" },
-            { sl: 12, id: "2410376112", name: "G. M NASIR UDDIN", blood: "", whatsapp: "", email: "", facebook: "#" },
+            { sl: 12, id: "2410376112", name: "G. M NASIR UDDIN", blood: "", whatsapp: "", email: "", facebook: "https://www.facebook.com/thisishridoyyy" },
             { sl: 13, id: "2410476113", name: "MD. TOUSIF AL MAHIR", blood: "A+", whatsapp: "8801516544980", email: "almahir457@gmail.com", facebook: "https://www.facebook.com/tousif.almahir" },
             { sl: 14, id: "2411176114", name: "MD. RABBI HASAN APU", blood: "A+", whatsapp: "8801614475425", email: "rabbihasan211049@gmail.com", facebook: "https://www.facebook.com/robbihasan.apu" },
             { sl: 15, id: "2410276115", name: "TASRIF AHMED", blood: "O+", whatsapp: "8801310561794", email: "tasrifkhan0102@gmail.com", facebook: "https://www.facebook.com/tasrif.khan.232854" },
             { sl: 16, id: "2410476116", name: "MD. SIFA TULLAH", blood: "O+", whatsapp: "", email: "", facebook: "https://www.facebook.com/sifatullah.sifat.3785" },
             { sl: 17, id: "2410776117", name: "MD. MARUF ALL MAK-TUM", blood: "", whatsapp: "", email: "", facebook: "https://www.facebook.com/profile.php?id=100077163877792" },
             { sl: 18, id: "2412276118", name: "NUBAH MAHJABIN", blood: "O+", whatsapp: "8801757219676", email: "nubahmahjabin@gmail.com", facebook: "https://www.facebook.com/nubah.mahjabin" },
-            { sl: 19, id: "2412576119", name: "MINARA POLY", blood: "B+", whatsapp: "8801326171563", email: "minarapoly746285@gmail.com", facebook: "#" },
+            { sl: 19, id: "2412576119", name: "MINARA POLY", blood: "B+", whatsapp: "8801326171563", email: "minarapoly746285@gmail.com", facebook: "https://www.facebook.com/minara.poly" },
             { sl: 20, id: "2410276120", name: "MD. TOUHID MEHER", blood: "O+", whatsapp: "8801710003604", email: "md.touhidmeher@gmail.com", facebook: "https://www.facebook.com/md.touhid.meher.tonmoy" },
             { sl: 21, id: "2410776121", name: "MD. MEHEDI HASAN ARZU", blood: "B+", whatsapp: "8801926455199", email: "mharzu12@gmail.com", facebook: "https://www.facebook.com/mehedi.arzu" },
             { sl: 22, id: "2410676122", name: "ABIDUR RAHMAN HIMEL", blood: "", whatsapp: "", email: "", facebook: "https://www.facebook.com/profile.php?id=100069872095131" },
@@ -219,23 +224,23 @@
             { sl: 29, id: "2410876132", name: "MD. MASKAOWAT AHSAN HASBY", blood: "B+", whatsapp: "8801317134323", email: "mahahsanhasby@gmail.com", facebook: "https://www.facebook.com/mahahsanhasby" },
             { sl: 30, id: "2410676133", name: "MD. RAHAT HOSSAIN", blood: "B+", whatsapp: "8801842463291", email: "rahathossain01842@gmail.com", facebook: "https://www.facebook.com/rahat.hossain.529544" },
             { sl: 31, id: "2411076134", name: "MD. MUJAHIDUL ISLAM", blood: "B+", whatsapp: "8801627813480", email: "mujahidulislamadib@gmail.com", github: "https://github.com/jonadib", linkedin: "https://www.linkedin.com/in/md-mujahidul-islam-adib-017b42287/", facebook: "https://www.facebook.com/mdmujahidulislamadib" },
-            { sl: 32, id: "2410676135", name: "SOURAV SIKDER JOY", blood: "B+", whatsapp: "8801627490712", email: "souravsikderjoy111@gmail.com", facebook: "#" },
+            { sl: 32, id: "2410676135", name: "SOURAV SIKDER JOY", blood: "B+", whatsapp: "8801627490712", email: "souravsikderjoy111@gmail.com", facebook: "https://www.facebook.com/sourav.sikderjoy.5" },
             { sl: 33, id: "2411076136", name: "MD. SAJID KHAN", blood: "", whatsapp: "", email: "", facebook: "https://www.facebook.com/md.sajid.khan.783100" },
             { sl: 34, id: "2410476137", name: "MD. KHADEMUL ISLAM", blood: "", whatsapp: "", email: "", facebook: "https://www.facebook.com/md.khademul.islam.386706" },
             { sl: 35, id: "2410576138", name: "ABDULLAH AL JUBAIR", blood: "", whatsapp: "", email: "", facebook: "https://www.facebook.com/mehedi.arzu" },
             { sl: 36, id: "2411176139", name: "MD. SAZZAD HOSEN", blood: "B+", whatsapp: "8801701611186", email: "siamsazzad543@gmail.com", facebook: "https://www.facebook.com/siam.sazzad.9" },
-            { sl: 37, id: "2411076140", name: "NOYON CHANDRA DAS", blood: "", whatsapp: "", email: "", facebook: "#" },
-            { sl: 38, id: "2410476141", name: "MD. MILON HOSEN", blood: "B+", whatsapp: "8801406919402", email: "kmdmilon999@gmail.com", facebook: "#" },
-            { sl: 39, id: "2410676142", name: "MD. SIAM HOSSAIN", blood: "O+", whatsapp: "8801312417985", email: "shephaoulhaquesiam138@gmail.com", facebook: "#" },
-            { sl: 40, id: "2410576143", name: "MD. ABDUL KARIM", blood: "O+", whatsapp: "8801870102675", email: "karimbsc.ru@gmail.com", facebook: "#" },
-            { sl: 41, id: "2411176144", name: "RIDWAN MAHFUZ", blood: "O+", whatsapp: "8801887818787", email: "ridwanmahfuz2004@gmail.com", facebook: "#" },
-            { sl: 42, id: "2412576145", name: "KRAY KRA HLA", blood: "", whatsapp: "", email: "", facebook: "#" },
-            { sl: 43, id: "2412376146", name: "HUMAIYARA REZA", blood: "", whatsapp: "", email: "", facebook: "#" },
-            { sl: 44, id: "2413076148", name: "RAJIB KUMAR YADAV", blood: "B+", whatsapp: "8801722931500", email: "hbounty988@outlook.com", facebook: "#" },
-            { sl: 45, id: "2312176121", name: "NANTASHA HAQUE", blood: "B+", whatsapp: "8801882488280", email: "nantashahaque2020@gmail.com", facebook: "#" },
-            { sl: 46, id: "2312276129", name: "RINZA FARIA PINKEY", blood: "A+", whatsapp: "8801780114815", email: "rinzafariapinkey@gmail.com", facebook: "#" },
-            { sl: 47, id: "2310676131", name: "MD ASHAB TANIM", blood: "A+", whatsapp: "8801939901671", email: "ashab.tanim10101101@gmail.com", facebook: "#" },
-            { sl: 48, id: "2311176144", name: "N.A.M. FUAD ALI BAKUL", blood: "B+", whatsapp: "8801780533382", email: "fuadalibakul@gmail.com", facebook: "#" }
+            { sl: 37, id: "2411076140", name: "NOYON CHANDRA DAS", blood: "", whatsapp: "", email: "", facebook: "https://www.facebook.com/noyon.das.932076" },
+            { sl: 38, id: "2410476141", name: "MD. MILON HOSEN", blood: "B+", whatsapp: "8801406919402", email: "kmdmilon999@gmail.com", facebook: "https://www.facebook.com/sisman99" },
+            { sl: 39, id: "2410676142", name: "MD. SIAM HOSSAIN", blood: "O+", whatsapp: "8801312417985", email: "shephaoulhaquesiam138@gmail.com", facebook: "https://www.facebook.com/sh.siam.928631" },
+            { sl: 40, id: "2410576143", name: "MD. ABDUL KARIM", blood: "O+", whatsapp: "8801870102675", email: "karimbsc.ru@gmail.com", facebook: "https://www.facebook.com/Abdul.Karim32412" },
+            { sl: 41, "id": "2411176144", "name": "RIDWAN MAHFUZ", "blood": "O+", "whatsapp": "8801887818787", "email": "ridwanmahfuz2004@gmail.com", "facebook": "https://www.facebook.com/ridwan.mahfuz.nill" },
+            { sl: 42, "id": "2412576145", "name": "KRAY KRA HLA", "blood": "B+", "whatsapp": "8801782348060", "email": "kraykrahla730@gmail.com", "facebook": "https://www.facebook.com/kraykra.5" },
+            { sl: 43, "id": "2412376146", "name": "HUMAIYARA REZA", "blood": "", "whatsapp": "", "email": "", "facebook": "https://www.facebook.com/raterakas.tararpahar" },
+            { sl: 44, "id": "2413076148", "name": "RAJIB KUMAR YADAV", "blood": "B+", "whatsapp": "8801722931500", "email": "hbounty988@outlook.com", "facebook": "https://www.facebook.com/rajiv.rajivkumaryadav.1" },
+            { sl: 45, "id": "2312176121", "name": "NANTASHA HAQUE", "blood": "B+", "whatsapp": "8801882488280", "email": "nantashahaque2020@gmail.com", "facebook": "https://www.facebook.com/nantasha.haque" },
+            { sl: 46, "id": "2312276129", "name": "RINZA FARIA PINKEY", "blood": "A+", "whatsapp": "8801780114815", "email": "rinzafariapinkey@gmail.com", "facebook": "https://www.facebook.com/rf.pinkey" },
+            { sl: 47, "id": "2310676131", "name": "MD ASHAB TANIM", "blood": "A+", "whatsapp": "8801939901671", "email": "ashab.tanim10101101@gmail.com", "facebook": "https://www.facebook.com/Mousum.tanim" },
+            { sl: 48, "id": "2311176144", "name": "N.A.M. FUAD ALI BAKUL", "blood": "B+", "whatsapp": "8801780533382", "email": "fuadalibakul@gmail.com", "facebook": "https://www.facebook.com/lil.lufi" }
         ];
 
         const grid = document.getElementById('profile-grid');
@@ -252,12 +257,13 @@
                 : '';
             const githubLink = student.github
                 ? `<a href="${student.github}" target="_blank" class="github" title="GitHub"><i class="fab fa-github"></i></a>`
-                : `<a href="#" class="github" title="GitHub (Placeholder)"><i class="fab fa-github"></i></a>`;
+                : '';
             const linkedinLink = student.linkedin
                 ? `<a href="${student.linkedin}" target="_blank" class="linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>`
-                : `<a href="#" class="linkedin" title="LinkedIn (Placeholder)"><i class="fab fa-linkedin-in"></i></a>`;
+                : '';
             
-            const facebookButton = student.facebook && student.facebook !== "#"
+            const hasFacebook = student.facebook && student.facebook !== "#";
+            const facebookButton = hasFacebook
                 ? `<div class="button-wrapper">
                         <a href="${student.facebook}" target="_blank" class="profile-button">
                             <i class="fab fa-facebook-f"></i> View Profile
